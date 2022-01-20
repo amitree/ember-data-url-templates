@@ -58,15 +58,6 @@ export default Mixin.create({
     return EmberObject.create(this.get('urlSegments'));
   },
 
-  // HACK: Prevent query/queryRecord from appending query params to urls, we
-  // can do that in the template.
-  // TODO: ember-data plans to implement better hooks for customizing the
-  // request. Hopefully in the future, this hack can be removed and another
-  // hook used instead.
-  sortQueryParams(/* params */) {
-    return {};
-  },
-
   _urlFromLink(snapshot, urlTemplate) {
     if (LINK_PREFIX_RE.test(urlTemplate)) {
       return this.buildURL(null, snapshot.id, snapshot, urlTemplate.replace(LINK_PREFIX_RE, ''), {});
