@@ -5,8 +5,17 @@
 [![Dependency Status](https://david-dm.org/amiel/ember-data-url-templates.svg)](https://david-dm.org/amiel/ember-data-url-templates)
 [![devDependency Status](https://david-dm.org/amiel/ember-data-url-templates/dev-status.svg)](https://david-dm.org/amiel/ember-data-url-templates?type=dev)
 
-ember-data-url-templates is an addon to allow building urls with url templates instead of
-defining `buildURL` as described in [RFC #4](https://github.com/emberjs/rfcs/pull/4).
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.24 or above
+* Ember CLI v3.24 or above
+* Node.js v12 or above
+
+
+Installation
+------------------------------------------------------------------------------
 
 ember-data-url-templates is under early development. Feedback is welcome, and of course,
 so are pull requests.
@@ -16,28 +25,8 @@ which fully implements [RFC 6570](http://tools.ietf.org/html/rfc6570).
 
 ## Usage
 
-### Installation
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
-```shell
-ember install ember-data-url-templates
-```
-
-### Requirements
-
-ember-data-url-templates `>= 0.1.0` is known to work with ember-data `>= 1.0.0-beta.18`, `^1.13`, and `^2.0`.
-
-### Documentation
-
-More in depth documentation can be found in [the wiki](https://github.com/amiel/ember-data-url-templates/wiki).
-
-### Synopsis
-
-```javascript
-// adapters/comment
-
-import Ember from "ember";
-import DS from "ember-data";
-import UrlTemplates from "ember-data-url-templates";
 
 export default DS.RESTAdapter.extend(UrlTemplates, {
   urlTemplate: '{+host}/comments{/id}',
