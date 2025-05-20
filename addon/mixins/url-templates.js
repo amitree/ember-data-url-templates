@@ -3,7 +3,6 @@ import { typeOf } from '@ember/utils';
 import Mixin from '@ember/object/mixin';
 import EmberObject from '@ember/object';
 import UriTemplate from 'uri-templates';
-import { assign } from '@ember/polyfills';
 import { LINK_PREFIX } from "ember-data-url-templates/mixins/url-templates-serializer";
 import flattenQueryParams from 'ember-data-url-templates/utils/flatten-query-params';
 
@@ -76,7 +75,7 @@ export default Mixin.create({
     },
 
     query(type, id, snapshot, query) {
-      var newQuery = assign({}, query);
+      var newQuery = Object.assign({}, query);
 
       for (const param in newQuery) {
         if (newQuery[param] === undefined) { delete newQuery[param]; }
